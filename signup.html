@@ -4,8 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Page</title>
+    <style>
+        body{
+            background-image: url(signupimg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #container{
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            height: 500px;
+            width: 400px;
+            margin: 20px auto auto auto;
+
+        }
+        h1{
+            padding-top: 10px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        label{
+            padding-left: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+        }
+        input{
+            margin-left: 50px;
+            border-radius: 5px;
+            width: 250px;
+            height: 20px;
+        }
+        button{
+            width: 100px;
+            margin-left: 50px;
+            margin-top: 15px;
+            border-radius: 5px;
+            height: 30px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="container">
+        <h1>Signup Page</h1>
+        <label>Enter Firstname</label><br>
+        <input type="text" id="fname"><br><br>
+        <label>Enter Lastname</label><br>
+        <input type="text" id="lname"><br><br>
+        <label>Enter Username</label><br>
+        <input type="text" id="uname"><br><br>
+        <label>Enter Password</label><br>
+        <input type="password" id="password"><br><br>
+        <label>Retype Password</label><br>
+        <input type="password" id="rpass"><br><br>
+        <button onclick="signup()">Signup</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+    <script>
+        function signup(){
+            const fn=document.getElementById("fname").value;
+            const ln=document.getElementById("lname").value;
+            const uname=document.getElementById("uname").value;
+            const p=document.getElementById("password").value;
+            const rp=document.getElementById("rpass").value;
+            if(uname=='' || p=='' || fn==''|| ln==''|| rp==''){
+                alert("Please fill all the details..");
+            }
+            else if(p!=rp){
+                alert("Passwords doesnot match..Type again");
+            }
+            else{
+                alert("Account created successfully..");
+            }
+        }
+        function reset(){
+            const fn=document.getElementById("fname").value="";
+            const ln=document.getElementById("lname").value="";
+            const uname=document.getElementById("uname").value="";
+            const p=document.getElementById("password").value="";
+            const rp=document.getElementById("rpass").value="";
+        }
+    </script>
 </body>
 </html>
